@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements onRequestPermissi
             mMap = googleMap;
             googleMap.addMarker(new MarkerOptions()
             .position(mDestinationLatLng)
-            .title("Destination"));
+            .title("Bascom Hall"));
             displayMyLocation();
 //            googleMap.addMarker(new MarkerOptions().position(helper).title("Current"));
 //            googleMap.addPolyline(new PolylineOptions().add(helper, mDestinationLatLng));
