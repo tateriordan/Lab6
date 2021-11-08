@@ -54,11 +54,11 @@ public class MainActivity extends AppCompatActivity implements onRequestPermissi
     private void displayMyLocation(){
         int permission = ActivityCompat.checkSelfPermission(this.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION);
         if (permission==PackageManager.PERMISSION_DENIED){
-            Log.i("HELLO", "HELLOHLELLHALGLALGAKGKFKGAJGJHNANG");
+
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
 
         } else {
-            Log.i("OHOH", "IT GOT TO THIS PART SO SOMETHING IS WRONG HERE");
+
             mFusedLocationProviderClient.getLastLocation().addOnCompleteListener(this, task -> {
                 Location mLastKnownLocation = task.getResult();
                 if (task.isSuccessful() && mLastKnownLocation != null){
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements onRequestPermissi
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION){
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                Log.i("WOW","IT GOT TO THE REQUEST PART");
+
                 displayMyLocation();
             }
         }
